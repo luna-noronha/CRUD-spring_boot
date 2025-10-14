@@ -19,6 +19,12 @@ public class Usuario {
     @Column(name = "email", unique = true)
     private String email;
 
+    @Column(name = "idade", unique = true)
+    private Integer idade;
+
+    @Column(name = "cargo", unique = true)
+    private String cargo;
+
     @Column(name = "nome")
     private String nome;
 }
