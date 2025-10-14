@@ -32,11 +32,12 @@ public class UsuarioService {
                 () -> new RuntimeException("Usuario não encontrado"));
 
         Usuario usuarioAtualizado = Usuario.builder()
-                .email(usuario.getEmail() != null ? usuario.getEmail():usuarioEntity.getEmail())
-                .nome(usuario.getNome() != null ? usuario.getNome():usuarioEntity.getNome())
+                .email(usuario.getEmail() != null ? usuario.getEmail() : usuarioEntity.getEmail())
+                .nome(usuario.getNome() != null ? usuario.getNome() : usuarioEntity.getNome())
+                .idade(usuario.getIdade() != null ? usuario.getIdade() : usuarioEntity.getIdade())
+                .cargo(usuario.getCargo() != null ? usuario.getCargo() : usuarioEntity.getCargo())
                 .id(usuarioEntity.getId())
                 .build();
-
         repository.saveAndFlush(usuarioAtualizado);
     }
 }
